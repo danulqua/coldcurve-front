@@ -1,0 +1,100 @@
+.search-form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin: 50px auto 0;
+
+  .search-wrapper {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+
+    .search-bar {
+      width: 50%;
+      height: 50px;
+      padding: 5px 25px;
+      border-radius: 3px;
+      border: none;
+
+      &:focus {
+        outline: 3px solid transparentize($color: $main-color, $amount: 0.3);
+      }
+    }
+  }
+
+  .filters-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+
+    .select-store {
+      display: flex;
+      padding: 5px;
+      width: 130px;
+
+      &:focus {
+        outline: 3px solid transparentize($color: $main-color, $amount: 0.3);
+      }
+    }
+
+    .input-price {
+      position: relative;
+
+      &::after {
+        content: 'Incorrect input';
+        position: absolute;
+        visibility: hidden;
+        left: 0;
+        top: 35px;
+        color: red;
+        font-size: 14px;
+      }
+
+      &.error {
+        &::after {
+          visibility: visible;
+        }
+      }
+
+      input {
+        padding: 2px;
+        width: 120px;
+
+        &:focus {
+          outline: 3px solid transparentize($color: $main-color, $amount: 0.3);
+        }
+      }
+    }
+
+    .input-discount {
+      display: flex;
+      align-items: center;
+      color: #fff;
+
+      input {
+        height: 15px;
+        width: 15px;
+        margin-right: 5px;
+      }
+    }
+  }
+
+  .btn-search {
+    padding: 5px 25px;
+    background-color: $main-color;
+    color: white;
+    border-radius: 3px;
+    transition: 0.3s background-color;
+    border: none;
+
+    &:hover {
+      background-color: lighten($color: $main-color, $amount: 5%);
+    }
+
+    &:focus {
+      background-color: darken($color: $main-color, $amount: 5%);
+      outline: 3px solid transparentize($color: $main-color, $amount: 0.3);
+    }
+  }
+}

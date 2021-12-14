@@ -1,0 +1,18 @@
+.spinner {
+  margin: 50px auto 0;
+  width: 100px;
+  height: 100px;
+  border: 10px solid transparentize($color: $main-color, $amount: 0.7);
+  border-top-color: $main-color;
+  border-radius: 50%;
+  animation: spin infinite linear 1s;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}

@@ -1,0 +1,16 @@
+header {
+  background-color: $main-color;
+  height: 70px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  h1 {
+    margin: 0;
+    font-size: 30px;
+    color: #fff;
+    text-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+    font-weight: 700;
+  }
+}
