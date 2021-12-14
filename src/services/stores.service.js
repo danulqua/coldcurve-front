@@ -2,7 +2,7 @@ import axios from 'axios';
 
 class Service {
   // API URL
-  _apiBase = process.env.REACT_APP_SERVER_URL;
+  _apiBase = 'https://mysterious-retreat-35493.herokuapp.com';
 
   // Fetch store names
   async getStores() {
