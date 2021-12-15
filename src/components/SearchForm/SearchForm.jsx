@@ -4,7 +4,7 @@ import service from '../../services/stores.service.js';
 
 const SearchForm = ({ text, handleInputChange, handleFormSubmit }) => {
   const [stores, setStores] = useState([]);
-  const [filters, setFilters] = useState({ storeId: null, maxPrice: 0, discountsOnly: false });
+  const [filters, setFilters] = useState({ storeId: null, maxPrice: '', discountsOnly: false });
   const [valid, setValid] = useState(true);
 
   // Fetch store names in order to fill in the select input

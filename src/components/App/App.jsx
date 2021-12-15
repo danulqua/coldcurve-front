@@ -33,8 +33,8 @@ const App = () => {
     // If form is invalid - do nothing
     if (!isValid) return;
 
-    filters.maxPrice = +filters.maxPrice;
-    setFilters(filters);
+    const filtersCopy = { ...filters, maxPrice: +filters.maxPrice };
+    setFilters(filtersCopy);
 
     setText((text) => text.trim()); // Remove useless spaces
     // If search bar isn't empty - search
