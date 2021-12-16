@@ -52,24 +52,26 @@ const SearchForm = ({ text, handleInputChange, handleFormSubmit }) => {
         </button>
       </div>
       <div className='filters-wrapper'>
-        <select
-          className='select-store'
-          name='store'
-          id='store'
-          placeholder='Store filter'
-          defaultValue=''
-          onChange={handleSelectChange}
-        >
-          <option value='' disabled>
-            Store filter
-          </option>
-          <option value=''>All stores</option>
-          {stores.map((item) => (
-            <option key={item.id} value={item.id}>
-              {item.name}
+        <div className='select-store-wrapper'>
+          <select
+            className='select-store'
+            name='store'
+            id='store'
+            placeholder='Store filter'
+            defaultValue=''
+            onChange={handleSelectChange}
+          >
+            <option value='' disabled>
+              Store filter
             </option>
-          ))}
-        </select>
+            <option value=''>All stores</option>
+            {stores.map((item) => (
+              <option key={item.id} value={item.id}>
+                {item.name}
+              </option>
+            ))}
+          </select>
+        </div>
         <div className={valid ? 'input-price' : 'input-price error'}>
           <input
             type='text'

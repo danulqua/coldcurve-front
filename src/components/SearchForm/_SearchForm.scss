@@ -15,26 +15,60 @@
       padding: 5px 25px;
       border-radius: 3px;
       border: none;
+      outline: none;
 
       &:focus {
-        outline: 3px solid transparentize($color: $main-color, $amount: 0.3);
+        box-shadow: 0 0 0 3px $main-color;
       }
     }
   }
 
   .filters-wrapper {
+    position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 10px;
 
-    .select-store {
-      display: flex;
-      padding: 5px;
-      width: 130px;
+    .select-store-wrapper {
+      position: relative;
 
-      &:focus {
-        outline: 3px solid transparentize($color: $main-color, $amount: 0.3);
+      .select-store {
+        -webkit-appearance: none;
+        display: flex;
+        padding: 3px 5px;
+        width: 130px;
+        border-radius: 5px;
+        border: none;
+        outline: none;
+
+        &:focus {
+          box-shadow: 0 0 0 3px $main-color;
+        }
+      }
+
+      &::after {
+        position: absolute;
+        content: '';
+        right: 10px;
+        top: 50%;
+        width: 7px;
+        height: 2px;
+        background-color: black;
+        z-index: 3;
+        transform: translateY(-50%) rotate(45deg);
+      }
+
+      &::before {
+        position: absolute;
+        content: '';
+        right: 6px;
+        top: 50%;
+        width: 7px;
+        height: 2px;
+        background-color: black;
+        z-index: 3;
+        transform: translateY(-50%) rotate(-45deg);
       }
     }
 
@@ -58,11 +92,14 @@
       }
 
       input {
-        padding: 2px;
+        padding: 3px 5px;
         width: 120px;
+        border-radius: 5px;
+        border: none;
+        outline: none;
 
         &:focus {
-          outline: 3px solid transparentize($color: $main-color, $amount: 0.3);
+          box-shadow: 0 0 0 3px $main-color;
         }
       }
     }
@@ -76,6 +113,11 @@
         height: 15px;
         width: 15px;
         margin-right: 5px;
+        outline: none;
+
+        &:focus {
+          box-shadow: 0 0 0 3px $main-color;
+        }
       }
     }
   }
@@ -87,6 +129,7 @@
     border-radius: 3px;
     transition: 0.3s background-color;
     border: none;
+    outline: none;
 
     &:hover {
       background-color: lighten($color: $main-color, $amount: 5%);
@@ -94,7 +137,7 @@
 
     &:focus {
       background-color: darken($color: $main-color, $amount: 5%);
-      outline: 3px solid transparentize($color: $main-color, $amount: 0.3);
+      box-shadow: 0 0 0 3px $main-color;
     }
   }
 }
