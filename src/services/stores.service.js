@@ -2,7 +2,7 @@ import axios from 'axios';
 
 class Service {
   // API URL
-  _apiBase = 'https://mysterious-retreat-35493.herokuapp.com';
+  _apiBase = 'https://coldcurve-backend.onrender.com';
 
   // Fetch store names
   async getStores() {
@@ -26,7 +26,7 @@ class Service {
       const products = (
         await axios.post(searchUrl, {
           'content-type': 'application/json',
-          body: JSON.stringify(filters),
+          body: JSON.stringify(filters)
         })
       ).data;
 
